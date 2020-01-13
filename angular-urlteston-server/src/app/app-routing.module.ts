@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DashboardComponent } from './pathology/dashboard/dashboard.component';
 import { SampleCollectionComponent } from './pathology/sample-collection/sample-collection.component';
 
@@ -45,6 +46,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+
 })
 export class AppRoutingModule { }
