@@ -20,14 +20,9 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'hr-payroll',
-        pathMatch: 'full'
-      },
-      {
         path: 'leave-application',
         component: LeaveApplicationComponent
-      },
+      }
     ]
   },
   {
